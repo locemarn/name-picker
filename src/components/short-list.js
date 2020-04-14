@@ -1,10 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 import { NameList } from "./name-list";
-import {NamesContext} from "../providers/name";
+import {useNames} from "../providers/name";
+import {useAppState} from "../providers/app-state";
 
 
-export function ShortList({ shortList, setShortList }) {
-  const names = useContext(NamesContext)
+export function ShortList() {
+  const names = useNames()
+  const { shortList, setShortList } = useAppState()
 
   const shortListedNames = names.filter(entry => shortList.includes(entry.id))
 

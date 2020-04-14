@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import {useAppState} from "../providers/app-state";
 
-export function Search({ searchValue, setSearchValue }) {
+
+export function Search() {
+  const { searchValue, setSearchValue } = useAppState()
 
   const inputRef = useRef()
 
