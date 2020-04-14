@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './css/style.css'
 
-import {names} from "./data";
+import {NamesProvider} from "./providers/name";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App names={names} />
+    <NamesProvider>
+      <App />
+    </NamesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

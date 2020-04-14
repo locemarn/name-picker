@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NameList } from "./name-list";
+import {NamesContext} from "../providers/name";
 
 
-export function ShortList({ names, shortList, setShortList }) {
+export function ShortList({ shortList, setShortList }) {
+  const names = useContext(NamesContext)
+
   const shortListedNames = names.filter(entry => shortList.includes(entry.id))
 
   function removeFromShortList(id) {
