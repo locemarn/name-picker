@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './css/style.css'
 
+import {names} from "./data";
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App names={names} />
   </React.StrictMode>,
   document.getElementById('root')
 );

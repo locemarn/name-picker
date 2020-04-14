@@ -1,11 +1,17 @@
 import React from 'react';
 
-function App() {
+function App({names}) {
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  );
+    <ul>
+      {names.map(entry => (
+        <li className={entry.sex} key={entry.id}>
+          <button>
+            {entry.name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default App;
